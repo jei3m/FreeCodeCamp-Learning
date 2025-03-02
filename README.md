@@ -1,6 +1,6 @@
 # FreeCodeCamp Learning Repository
 
-Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a personal tracker for my progress through FreeCodeCamp's curriculum and a space for all the projects I completed along the way. My ultimate goal is to earn **7 certifications** offered by FreeCodeCamp, and I'm documenting my journey here to stay organized, motivated, and accountable.
+Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a personal tracker for my progress through FreeCodeCamp's curriculum and a space for all the projects I completed along the way. My ultimate goal is to earn **7 certifications** offered by FreeCodeCamp, and I'm documenting my journey here to stay organized, and motivated.
 
 ---
 
