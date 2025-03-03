@@ -36,3 +36,8 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
 - **March 3, 2025 (It's my Birthday! 🥳)**  
     - Completed: Learn HTML by Building a Cat Photo App
     - Completed: Learn Basic CSS by Building a Cafe Menu
+    - Completed: Learn CSS Colors by Building a Set of Colored Markers
+    - Completed: Learn HTML Forms by Building a Registration Form
+    - Completed: Survey Form
+    - Completed: Learn the CSS Box Model by Building a Rothko Painting
+    - Completed: Learn the CSS Flexbox by Building a Photo Gallery
