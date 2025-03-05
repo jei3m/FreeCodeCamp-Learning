@@ -45,3 +45,4 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
 - **March 6, 2025**
     - Completed: Learn Typography by Building a Nutrition Label
     - Completed: Learn Accessibility by Building a Quiz
+    - Completed: Tribute Page
