@@ -41,3 +41,7 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
     - Completed: Survey Form
     - Completed: Learn the CSS Box Model by Building a Rothko Painting
     - Completed: Learn the CSS Flexbox by Building a Photo Gallery
+
+- **March 6, 2025**
+    - Completed: Learn Typography by Building a Nutrition Label
+    - Completed: Learn Accessibility by Building a Quiz
