@@ -46,3 +46,7 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
     - Completed: Learn Typography by Building a Nutrition Label
     - Completed: Learn Accessibility by Building a Quiz
     - Completed: Tribute Page
+
+- **March 7, 2025**
+    - Reorganized the overall structure of the repository
+    - Seperated projects into their respective courses
