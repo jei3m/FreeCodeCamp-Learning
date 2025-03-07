@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>AI-Ponics Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Overview">Overview</a></li>
+            <li><a class="nav-link" href="#Hardware_Components">Hardware Components</a></li>
+            <li><a class="nav-link" href="#Software_Libraries">Software Libraries</a></li>
+            <li><a class="nav-link" href="#Code_Explanation">Code Explanation</a></li>
+            <li><a class="nav-link" href="#Configuration_and_Initialization">Configuration and Initialization</a></li>
+            <li><a class="nav-link" href="#Interrupt_Service_Routine">Interrupt Service Routine</a></li>
+            <li><a class="nav-link" href="#Email_Alert_Functions">Email Alert Functions</a></li>
+            <li><a class="nav-link" href="#Sensor_Data_Transmission">Sensor Data Transmission</a></li>
+            <li><a class="nav-link" href="#Setup_and_Loop_Functions">Setup and Loop Functions</a></li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Overview">
+            <header>Overview</header>
+            <article>
+                <p>
+                    This documentation provides a detailed explanation of the code used for monitoring an AI-Ponics system. The system is designed to monitor environmental parameters such as temperature, humidity, and water flow rate using an ESP32 microcontroller. The data is sent to the Blynk API for remote monitoring, and email alerts are triggered if certain thresholds are exceeded. The system also includes an OLED display for viewing sensor readings.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Hardware_Components">
+            <header>Hardware Components</header>
+            <article>
+                <p>The AI-Ponics monitoring system includes the following Hardware Components:</p>
+                <ul>
+                    <li>ESP32 Microcontroller: The main processing unit.</li>
+                    <li>DHT22 Sensor: Measures temperature and humidity.</li>
+                    <li>Water Flow Sensor: Measures the flow rate of water.</li>
+                    <li>OLED Display: Displays sensor data locally.</li>
+                    <li>WiFi Module: Enables internet connectivity for data transmission and email alerts.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="Software_Libraries">
+            <header>Software Libraries</header>
+            <article>
+                <p>The AI-Ponics monitoring system includes the following Software Libraries:</p>
+                <ul>
+                    <li>WiFi.h: Manages WiFi connectivity.</li>
+                    <li>BlynkSimpleEsp32.h: Facilitates communication with the Blynk IoT platform.</li>
+                    <li>DHT.h: Interfaces with the DHT22 sensor.</li>
+                    <li>ESP_Mail_Client.h: Manages email sending functionality.</li>
+                    <li>Adafruit_GFX.h and Adafruit_SSD1306.h: Handle the OLED display.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="Code_Explanation">
+            <header>Code Explanation</header>
+            <article>
+                <p>The code is structured into several key sections, each handling a specific aspect of the AI-Ponics system. Below is a detailed breakdown of the code.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Configuration_and_Initialization">
+            <header>Configuration and Initialization</header>
+            <article>
+                <p>The code begins by including necessary libraries and defining configuration parameters such as WiFi credentials, Blynk authentication token, and pin assignments for sensors.</p>
+                <code>
+                    #include "config.h"
+                    #include &lt;WiFi.h&gt;
+                    #include &lt;BlynkSimpleEsp32.h&gt;
+                    #include &lt;DHT.h&gt;
+                    #include &lt;ESP_Mail_Client.h&gt;
+                    #include &lt;Wire.h&gt;
+                    #include &lt;Adafruit_GFX.h&gt;
+                    #include &lt;Adafruit_SSD1306.h&gt;
+
+                    char auth[] = BLYNK_AUTH_TOKEN;
+                    BlynkTimer timer;
+
+                    #define DHTPIN 27
+                    #define DHTTYPE DHT22
+                    DHT dht(DHTPIN, DHTTYPE);
+
+                    #define FLOW_SENSOR_PIN 26
+                    volatile int flowPulseCount = 0;
+                    float flowRate = 0.0;
+                    unsigned long oldTime = 0;
+
+                    SMTPSession smtp;
+
+                    unsigned long lastEmailTempSent = 0;
+                    const unsigned long emailTempInterval = 10 * 60 * 1000;
+
+                    unsigned long lastEmailPumpSent = 0;
+                    const unsigned long emailPumpInterval = 10 * 60 * 1000;
+
+                    #define SCREEN_WIDTH 128
+                    #define SCREEN_HEIGHT 64
+                    #define OLED_RESET    -1
+                    Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+                </code>
+            </article>
+        </section>
+        <section class="main-section" id="Interrupt_Service_Routine">
+            <header>Interrupt Service Routine</header>
+            <article>
+                <p>The pulseCounter function is an interrupt service routine (ISR) that increments a counter each time a pulse is detected from the water flow sensor.</p>
+                <code>
+                    void IRAM_ATTR pulseCounter() {
+                    flowPulseCount++;
+                    }
+                </code>
+            </article>
+        </section>
+        <section class="main-section" id="Email_Alert_Functions">
+            <header>Email Alert Functions</header>
+            <article>
+                <p>Two functions, sendTempAlert and sendPumpAlert, are defined to send email alerts when the temperature exceeds a threshold or the water flow rate drops to zero, respectively.</p>
+                <code>
+                    void sendTempAlert(float temperature) {
+                        if (millis() - lastEmailTempSent >= emailTempInterval) {
+                            // Email preparation and sending logic
+                        }
+                    }
+
+                    void sendPumpAlert() {
+                        if (millis() - lastEmailPumpSent >= emailPumpInterval) {
+                            // Email preparation and sending logic
+                        }
+                    }
+                </code>
+            </article>
+        </section>
+        <section class="main-section" id="Sensor_Data_Transmission">
+            <header>Sensor Data Transmission</header>
+            <article>
+                <p>The sendSensor function reads data from the DHT22 and water flow sensors, sends this data to the Blynk platform, and updates the OLED display. It also checks if the temperature or flow rate exceeds predefined thresholds and triggers email alerts if necessary.</p>
+                <code>
+                    void sendSensor() {
+                    float humidity = dht.readHumidity();
+                    float temperature = dht.readTemperature();
+
+                    Blynk.virtualWrite(V0, temperature);
+                    Blynk.virtualWrite(V1, humidity);
+
+                    if (temperature > 36) {
+                        sendTempAlert(temperature);
+                    }
+
+                    unsigned long currentTime = millis();
+                    detachInterrupt(digitalPinToInterrupt(FLOW_SENSOR_PIN));
+                    flowRate = (flowPulseCount / 7.5);
+                    Blynk.virtualWrite(V2, flowRate);
+                    flowPulseCount = 0;
+                    oldTime = currentTime;
+                    attachInterrupt(digitalPinToInterrupt(FLOW_SENSOR_PIN), pulseCounter, FALLING);
+
+                    display.clearDisplay();
+                    display.setCursor(0, 0);
+                    display.setTextSize(1);
+                    display.setTextColor(SSD1306_WHITE);
+                    display.println("Temp: " + String(temperature) + " C");
+                    display.println("Humidity: " + String(humidity) + " %");
+                    display.println("Flow: " + String(flowRate) + " L/min");
+                    display.display();
+                    }
+                </code>
+            </article>
+        </section>
+        <section class="main-section" id="Setup_and_Loop_Functions">
+            <header>Setup and Loop Functions</header>
+            <article>
+                <p>The setup function initializes the OLED display, connects to WiFi, initializes sensors, and sets up a timer to periodically call sendSensor. The loop function continuously runs the Blynk and timer tasks.</p>
+                <code>
+                    void setup() {
+                    Serial.begin(115200);
+
+                    if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+                        Serial.println(F("SSD1306 allocation failed"));
+                        for(;;);
+                    }
+
+                    display.clearDisplay();
+                    display.setTextSize(1);
+                    display.setTextColor(SSD1306_WHITE);
+                    display.setCursor(0, 0);
+                    display.println("Initializing...");
+                    display.display();
+
+                    WiFi.begin(WIFI_SSID, WIFI_PASS);
+                    delay(5000);
+
+                    if (WiFi.status() == WL_CONNECTED) {
+                        Blynk.begin(auth, WIFI_SSID, WIFI_PASS);
+                        dht.begin();
+                        pinMode(FLOW_SENSOR_PIN, INPUT_PULLUP);
+                        attachInterrupt(digitalPinToInterrupt(FLOW_SENSOR_PIN), pulseCounter, FALLING);
+                        timer.setInterval(1000L, sendSensor);
+                    } else {
+                        ESP.restart();
+                    }
+                    }
+
+                    void loop() {
+                    Blynk.run();
+                    timer.run();
+                    }
+                </code>
+            </article>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <article>
+                <p>This is still a work in progress. Please refer to this GitHub repository for the most up-to-date version of the code: <a href="https://github.com/jei3m/ai-ponics" target="_blank">AI-Ponics Repository</a></p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
