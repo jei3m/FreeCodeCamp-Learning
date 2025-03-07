@@ -38,15 +38,20 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
     - Completed: Learn Basic CSS by Building a Cafe Menu
     - Completed: Learn CSS Colors by Building a Set of Colored Markers
     - Completed: Learn HTML Forms by Building a Registration Form
-    - Completed: Survey Form
+    - Completed: Survey Form (Certification Project)
     - Completed: Learn the CSS Box Model by Building a Rothko Painting
     - Completed: Learn the CSS Flexbox by Building a Photo Gallery
 
 - **March 6, 2025**
     - Completed: Learn Typography by Building a Nutrition Label
     - Completed: Learn Accessibility by Building a Quiz
-    - Completed: Tribute Page
+    - Completed: Tribute Page (Certification Project)
 
 - **March 7, 2025**
     - Reorganized the overall structure of the repository
     - Seperated projects into their respective courses
+
+- **March 8, 2025**
+    - Completed: Learn Intermediate CSS by Building a Cat Painting
+    - Completed: Learn Responsive Web Design by Building a Piano
+    - Completed: Technical Documentation Page (Certification Project)
