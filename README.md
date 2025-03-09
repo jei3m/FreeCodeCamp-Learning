@@ -55,3 +55,8 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
     - Completed: Learn Intermediate CSS by Building a Cat Painting
     - Completed: Learn Responsive Web Design by Building a Piano
     - Completed: Technical Documentation Page (Certification Project)
+
+- **March 10, 2025**
+    - Completed: Learn CSS Variables by Building a City Skyline
+    - Completed: Learn CSS Grid by Building a Magazine
+    - Completed: Product Landing Page (Certification Project)
