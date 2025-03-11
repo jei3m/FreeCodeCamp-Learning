@@ -20,8 +20,8 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
 ## 📊 Progress Overview
 
 ### Certifications
-- 🟢 **Responsive Web Design Certification** (In Progress)  
-- 🔴 **JavaScript Algorithms and Data Structures Certification** (Not Started)  
+- 🟢 **Responsive Web Design Certification** (Done)  
+- 🟢 **JavaScript Algorithms and Data Structures Certification** (In Progress)  
 - 🔴 **Front End Development Libraries Certification** (Not Started)  
 - 🔴 **Data Visualization Certification** (Not Started)  
 - 🔴 **Relational Database Certification** (Not Started)  
@@ -60,3 +60,9 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
     - Completed: Learn CSS Variables by Building a City Skyline
     - Completed: Learn CSS Grid by Building a Magazine
     - Completed: Product Landing Page (Certification Project)
+
+- **March 11, 2025**
+    - Completed: Learn CSS Animation by Building a Ferris Wheel
+    - Completed: Learn CSS Transforms by Building a Penguin
+    - Completed: Personal Portfolio Page (Certification Project)
+    - Obtained the Responsive Web Design Certificate
