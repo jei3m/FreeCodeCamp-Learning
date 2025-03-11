@@ -65,4 +65,4 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
     - Completed: Learn CSS Animation by Building a Ferris Wheel
     - Completed: Learn CSS Transforms by Building a Penguin
     - Completed: Personal Portfolio Page (Certification Project)
-    - Obtained the Responsive Web Design Certificate
+    - Obtained the Responsive Web Design Certificate 🏅
