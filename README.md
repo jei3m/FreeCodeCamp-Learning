@@ -66,3 +66,6 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
     - Completed: Learn CSS Transforms by Building a Penguin
     - Completed: Personal Portfolio Page (Certification Project)
     - Obtained the Responsive Web Design Certificate 🏅
+
+- **April 6, 2025**
+    - Completed: Learn Introductory JavaScript by Building a Pyramid Generator
