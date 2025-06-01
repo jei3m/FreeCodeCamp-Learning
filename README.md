@@ -70,3 +70,6 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
 - **April 6, 2025**
     - Completed: Learn Introductory JavaScript by Building a Pyramid Generator
     - Completed: Review JavaScript Fundamentals by Building a Gradebook App
+
+- **June 1, 2025**
+    - Completed: Learn Basic Debugging by Building a Random Background Color Changer
