@@ -73,3 +73,6 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
 
 - **June 1, 2025**
     - Completed: Learn Basic Debugging by Building a Random Background Color Changer
+
+- **June 3, 2025**
+    - Completed: Learn Basic JavaScript by Building a Role Playing Game
