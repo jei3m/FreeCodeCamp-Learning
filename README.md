@@ -76,3 +76,9 @@ Welcome to my **FreeCodeCamp Learning** repository! This repository serves as a 
 
 - **June 3, 2025**
     - Completed: Learn Basic JavaScript by Building a Role Playing Game
+
+- **June 4, 2025**
+    - Completed: Build a Calorie Counter
+
+- **June 6, 2025**
+    - Completed: Review DOM Manipulation by Building a Rock, Paper, Scissors Game
