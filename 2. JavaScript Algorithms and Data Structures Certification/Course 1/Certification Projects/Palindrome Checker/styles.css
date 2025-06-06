@@ -1,0 +1,88 @@
+body {
+    font-family: Verdana;
+    background-color: #0f0f0f;
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.palindrome-container {
+    background-color: white;
+    color: black;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    height: 120px;
+    border-bottom: 6px solid #5a01a7;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.input-container {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+#text-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    color: black;
+    font-size: 1.25rem;
+    border: none;
+    border-bottom: 2px solid #5a01a7;
+}
+
+#check-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #5a01a7;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#result {
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.p-container {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #933DC9;
+    border-radius: 1.25rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.p-container p {
+    margin: 0;
+    line-height: 1.6;
+}
